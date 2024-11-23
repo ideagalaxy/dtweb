@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털트윈랩실</title>
+    <link rel="stylesheet" href="{% static 'css/style_user_main.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+
+<header>
+    <div class="header_logo">
+        <p>디지털트윈 연구실</p>
+    </div>
+</header>
+<body>
+    <div class="wrapper">
+        <h2>
+            민성's MENU PICK!!
+        </h2>
+        <br>
+
+        <h1>
+            {{store}}
+        </h1>
+        <p>
+            한마디 : {{desc}}
+        </p>
+        
+        <div class="button-container">
+            <form action="/" method="get">
+                <button type="submit" class="btn">홈으로</button>
+            </form>
+        </div>
+
+        
+        
+    </div>
+</body>
+
+
+</html>

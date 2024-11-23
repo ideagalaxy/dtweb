@@ -1,0 +1,58 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털트윈랩실</title>
+    <link rel="stylesheet" href="{% static 'css/style_user_main.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+
+<header>
+    <div class="header_logo">
+        <p>디지털트윈 연구실</p>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="/">홈으로</a></li>
+        </ul>
+      </nav>
+</header>
+<body>
+    <div class="wrapper">
+        <h1>
+            민성's 맛집 목록
+        </h1>
+        <form method = "post" >
+            {% csrf_token %}
+            <div class="button-container">
+                <button name="click" class="btn">가게 추가하기</button>
+            </div>
+        </form>
+        
+        <br>
+        <table>
+            <tr>
+              <th>가게 이름</th>
+              <th></th>
+            </tr>
+            {% for store in store_list %}
+                <tr>
+                    <td>{{ store.name }}</td>
+                    <td><li><a href="/change/{{store.id}}">수정</a></li></td>
+                </tr>
+            {% endfor %}
+          </table>
+        
+    
+        
+        
+    </div>
+</body>
+
+
+</html>

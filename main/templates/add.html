@@ -1,0 +1,62 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털트윈랩실</title>
+    <link rel="stylesheet" href="{% static 'css/style_change_money.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+
+<header>
+    <div class="header_logo">
+        <p>디지털트윈 연구실</p>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="/store_list">가게목록</a></li>
+        </ul>
+      </nav>
+</header>
+<body>
+    <div class="wrapper">
+        <h1>
+            가게 추가하기
+        </h1>
+        <form method = "post" >
+            {% csrf_token %}
+            <div class="drop-container"> 
+                <select class="dropmenu" name="distance" id="distance" onchange="updatePlaceholder()">
+                    <option value="min" selected>가까운 거리</option>
+                    <option value="mid">적당한 거리</option>
+                    <option value="max">살짝 먼 거리</option>
+                </select>
+                <div class="input-box">
+                    <input type="text" name="type" placeholder="input : 종류(ex:한식,일식,패스트푸드..etc)">
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" name="name" placeholder="input : 가게 이름">
+            </div>
+            <div class="input-box">
+                <input type="text" name="desc" placeholder="input : 한마디">
+            </div>
+
+            <div class="button-container">
+                <button type="submit" name="add" class="btn">추가하기</button>
+            </div>
+            
+        </form>
+        
+    
+        
+        
+    </div>
+</body>
+
+
+</html>
