@@ -23,6 +23,16 @@ def store_page(request, pk):
     context={}
     context["store"] = store.name
     context["desc"] = store.desc
+    match store.dist:
+        case 1:
+            new_dist = "가까운 거리"
+        case 2:
+            new_dist = "적당한 거리"
+        case 3:
+            new_dist = "살짝 먼 거리"
+    txt = f"거리 : {new_dist} | 종류 : {store.type}"
+    context["txt"] = txt
+            
 
     
     return render(request, 'store_page.html',context)

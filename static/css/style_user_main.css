@@ -63,9 +63,16 @@ body{
     background-position: center;
 }
 
+@media screen and (max-width: 450px) {
+    body {
+        background: url(pikmin_phone.png) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
 .wrapper{
     width: 700px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.4);
     border: 3px solid rgba(233, 9, 9, 0.5);
     box-shadow: 0 0 10px rgba(73, 221, 24, 0.399);
     backdrop-filter: blur(2px);
@@ -111,12 +118,13 @@ table, th, td {
 }  
   
 td:first-child {
-    width: 80%;
+    width: 70%;
     padding: 10px;
     text-align: center;  
     font-size: 20px;
 }  
 td:last-child {
+    vertical-align: middle;
     padding: 10px;
     text-align: center;
     font-size: 15px;  
